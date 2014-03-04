@@ -18,4 +18,6 @@
 # limitations under the License.
 #
 
-# Set meaningful node attributes here
+default['automysql_email_notify'] = 'root'
+default['automysql_mysql_password'] = 'password-goes-here'
+default['automysql_backup_location'] = '/srv/backup/db'

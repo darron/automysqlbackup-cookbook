@@ -5,7 +5,11 @@ require 'spec_helper'
 describe 'automysqlbackup::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
-  it 'does something' do
-    pending 'Replace this with meaningful tests'
+  it 'creates the mysqlbackup script' do
+    expect(chef_run).to create_template('/etc/cron.daily/automysqlbackup')
+  end
+
+  it 'creates the backup directory' do
+    expect(chef_run).to create_directory('/srv/backup/db')
   end
 end
